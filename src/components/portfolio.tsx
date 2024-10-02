@@ -16,7 +16,7 @@ const colors = {
     primary: '#E6F1FF',   // Light blue-white
     secondary: '#8892B0', // Muted blue-gray
   },
-  accent: {a
+  accent: {
     primary: '#64FFDA',   // Cyan (keep this as it works well)
     secondary: '#58A6FF', // Bright blue
     tertiary: '#10B981',  // Green (keep this as it works well for variety)
