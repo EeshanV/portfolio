@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useEffect, useRef } from 'react'
-import { motion, useScroll, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { ChevronRight, Shield, Code, Send, Lock, Server, Brain, Globe, Home, Briefcase, Wrench } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 import { FaGithub} from 'react-icons/fa'
