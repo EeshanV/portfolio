@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Space+Mono&family=Syncopate:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #000000;
+  --color-text-primary: #39FF14;
+  --color-accent-1: #00FFFF;
+  --color-accent-2: #ffffff;
+  --color-highlight: #58A6FF;
+  --color-background-alt: #0A192F;
+  --color-text-muted: #9bdcfa;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: 'Space Mono', monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', sans-serif;
+  color: var(--color-accent-1);
+  letter-spacing: 1px;
+}
+
+a, button {
+  font-family: 'Syncopate', sans-serif;
+  color: var(--color-accent-2);
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+a:hover, button:hover {
+  color: var(--color-highlight);
+}
+
+.button-shadow {
+  box-shadow: 5px 5px 0px rgba(57, 255, 20, 0.25);
+  transition: all 0.3s ease;
+}
+
+.button-shadow:hover {
+  box-shadow: 2px 2px 0px rgba(57, 255, 20, 0.25);
+}
+
+.cyberpunk-section {
+  background-color: var(--color-background-alt);
+  border: 1px solid var(--color-accent-1);
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.cyberpunk-text {
+  color: var(--color-text-muted);
+}
+
+.cyberpunk-highlight {
+  color: var(--color-highlight);
+  font-weight: bold;
+}
+
+/* Add some custom classes for typography */
+.text-glitch {
+  position: relative;
+}
+
+.text-glitch::before,
+.text-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.text-glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--color-accent-1);
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+.text-glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 var(--color-accent-2);
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(17px, 9999px, 94px, 0);
+  }
+  20% {
+    clip: rect(37px, 9999px, 44px, 0);
+  }
+  40% {
+    clip: rect(58px, 9999px, 54px, 0);
+  }
+  60% {
+    clip: rect(80px, 9999px, 66px, 0);
+  }
+  80% {
+    clip: rect(23px, 9999px, 21px, 0);
+  }
+  100% {
+    clip: rect(42px, 9999px, 78px, 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip: rect(65px, 9999px, 119px, 0);
+  }
+  20% {
+    clip: rect(45px, 9999px, 50px, 0);
+  }
+  40% {
+    clip: rect(92px, 9999px, 39px, 0);
+  }
+  60% {
+    clip: rect(23px, 9999px, 106px, 0);
+  }
+  80% {
+    clip: rect(16px, 9999px, 96px, 0);
+  }
+  100% {
+    clip: rect(89px, 9999px, 27px, 0);
+  }
+}
