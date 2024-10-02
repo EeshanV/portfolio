@@ -1,10 +1,10 @@
 "use client"
 
 import React, { useState, useEffect, useRef } from 'react'
-import { motion, useScroll, useTransform, AnimatePresence, useAnimation, useSpring } from 'framer-motion'
-import { Menu, X, ChevronRight, Shield, Terminal, Code, Database, Cloud, Send, Lock, Server, Brain, Globe, ChevronUp, ChevronDown, Home, Briefcase, Wrench } from 'lucide-react'
+import { motion, useScroll, AnimatePresence } from 'framer-motion'
+import { ChevronRight, Shield, Code, Send, Lock, Server, Brain, Globe, Home, Briefcase, Wrench } from 'lucide-react'
 import { useRouter } from 'next/navigation'
-import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa'
+import { FaGithub} from 'react-icons/fa'
 import { FaBuilding, FaNewspaper, FaRobot, FaTree, FaHackerrank } from 'react-icons/fa'
 import { FaExternalLinkAlt } from 'react-icons/fa'
 import { Particles } from './Particles'
@@ -16,7 +16,7 @@ const colors = {
     primary: '#E6F1FF',   // Light blue-white
     secondary: '#8892B0', // Muted blue-gray
   },
-  accent: {
+  accent: {a
     primary: '#64FFDA',   // Cyan (keep this as it works well)
     secondary: '#58A6FF', // Bright blue
     tertiary: '#10B981',  // Green (keep this as it works well for variety)
@@ -275,7 +275,7 @@ const Divider = () => (
 
 export const Portfolio = () => {
   const { scrollYProgress } = useScroll()
-  const nameX = useTransform(scrollYProgress, [0, 1], ['0%', '-50%'])
+  // const nameX = useTransform(scrollYProgress, [0, 1], ['0%', '-50%'])
   const cursorRef = useRef<HTMLDivElement>(null)
 
   const [characters, setCharacters] = useState<string[]>([])
@@ -305,7 +305,7 @@ export const Portfolio = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-      const heroSection = heroSectionRef.current?.offsetTop ?? 0;
+      // const heroSection = heroSectionRef.current?.offsetTop ?? 0;
       const experienceSection = experienceSectionRef.current?.offsetTop ?? 0;
       const arsenalSection = arsenalSectionRef.current?.offsetTop ?? 0;
 
@@ -395,20 +395,20 @@ export const Portfolio = () => {
     }
   }, [showHeroText])
 
-  const charVariants = {
-    initial: { opacity: 1 },
-    animate: { 
-      opacity: [1, 0.7, 1],
-      scale: [1, 1.05, 1],
-      rotate: [0, -2, 2, 0],
-      transition: { 
-        duration: 0.3,
-        times: [0, 0.5, 1],
-        repeat: Infinity,
-        repeatType: "reverse"
-      }
-    }
-  };
+  // const charVariants = {
+  //   initial: { opacity: 1 },
+  //   animate: { 
+  //     opacity: [1, 0.7, 1],
+  //     scale: [1, 1.05, 1],
+  //     rotate: [0, -2, 2, 0],
+  //     transition: { 
+  //       duration: 0.3,
+  //       times: [0, 0.5, 1],
+  //       repeat: Infinity,
+  //       repeatType: "reverse"
+  //     }
+  //   }
+  // };
 
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
@@ -423,18 +423,18 @@ export const Portfolio = () => {
   }, [])
 
 
-  const svgVariants = {
-    initial: { opacity: 1 },
-    animate: { opacity: 1 },
-  };
+  // const svgVariants = {
+  //   initial: { opacity: 1 },
+  //   animate: { opacity: 1 },
+  // };
 
-  const pathVariants = {
-    initial: { d: getRandomShape() },
-    animate: ({ letter, index }: { letter: string; index: number }) => ({
-      d: getLetterPath(letter),
-      transition: { duration: 1, ease: "easeInOut", delay: index * 0.2 }
-    })
-  };
+  // const pathVariants = {
+  //   initial: { d: getRandomShape() },
+  //   animate: ({ letter, index }: { letter: string; index: number }) => ({
+  //     d: getLetterPath(letter),
+  //     transition: { duration: 1, ease: "easeInOut", delay: index * 0.2 }
+  //   })
+  // };
 
   return (
     <div className={`min-h-screen bg-[${colors.background}] text-[${colors.text.primary}] relative overflow-hidden font-sans`}>
