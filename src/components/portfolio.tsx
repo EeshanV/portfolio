@@ -274,8 +274,6 @@ const Divider = () => (
 );
 
 export const Portfolio = () => {
-  const { scrollYProgress } = useScroll()
-  // const nameX = useTransform(scrollYProgress, [0, 1], ['0%', '-50%'])
   const cursorRef = useRef<HTMLDivElement>(null)
 
   const [characters, setCharacters] = useState<string[]>([])
@@ -655,28 +653,3 @@ export const Portfolio = () => {
     </div>
   )
 }
-
-// Add this function outside of the component
-const getRandomShape = () => {
-  const shapes = [
-    "M10,10 L40,10 L40,40 L10,40 Z", // Square
-    "M25,10 L40,40 L10,40 Z", // Triangle
-    "M25,10 A15,15 0 0,1 25,40 A15,15 0 0,1 25,10", // Circle
-    "M10,25 Q25,10 40,25 T70,25", // Wave
-    "M10,10 L40,10 L25,40 Z", // Pentagon
-    "M10,30 Q25,10 40,30 T70,30", // Curved line
-  ];
-  return shapes[Math.floor(Math.random() * shapes.length)];
-};
-
-// Add this function outside of the component
-const getLetterPath = (letter: string) => {
-  switch (letter) {
-    case 'E': return "M10,10 H40 V25 H10 V40 H40";
-    case 'S': return "M40,10 H10 V25 H40 V40 H10";
-    case 'H': return "M10,10 V40 M40,10 V40 M10,25 H40";
-    case 'A': return "M10,40 L25,10 L40,40 M15,30 H35";
-    case 'N': return "M10,40 V10 L40,40 V10";
-    default: return "";
-  }
-};
